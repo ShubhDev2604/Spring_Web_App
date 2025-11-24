@@ -12,4 +12,9 @@ public class HomeController {
     public String greet() {
         return "Hi to my website!!!!!!!";
     }
+
+    @RequestMapping("/about")
+    public String about() {
+        return "This is my about page";
+    }
 }
