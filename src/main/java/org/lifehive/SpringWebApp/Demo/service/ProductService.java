@@ -46,4 +46,17 @@ public class ProductService {
         products.set(index, product);
         return "Product updated successfully";
     }
+
+    public String deleteProductById(int prodId) {
+        int index = -1;
+        for(int i=0; i<products.size(); i++) {
+            if(products.get(i).getProdId() == prodId) {
+                index = i;
+                break;
+            }
+        }
+        if(index == -1) return "Unable to locate the product";
+        products.remove(index);
+        return "Product removed successfully";
+    }
 }

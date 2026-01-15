@@ -3,6 +3,7 @@ package org.lifehive.SpringWebApp.Demo.controller
 import org.lifehive.SpringWebApp.Demo.model.Product
 import org.lifehive.SpringWebApp.Demo.service.ProductService
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -38,5 +39,10 @@ class ProductController @Autowired constructor(
     @PutMapping("/products")
     fun updateProduct(@RequestBody product: Product): String {
         return service.updateProduct(product)
+    }
+
+    @DeleteMapping("/products/{id}")
+    fun deleteProductById(@PathVariable("id") prodId: Int) : String {
+        return service.deleteProductById(prodId)
     }
 }
