@@ -22,7 +22,7 @@ class ProductController @Autowired constructor(
     }
 
     @GetMapping("/products/{prodId}")
-    fun getProductById(@PathVariable prodId: Int): Product {
+    fun getProductById(@PathVariable prodId: Long): Product {
         return service.getProductById(prodId)
     }
 
@@ -42,7 +42,7 @@ class ProductController @Autowired constructor(
     }
 
     @DeleteMapping("/products/{id}")
-    fun deleteProductById(@PathVariable("id") prodId: Int) : String {
+    fun deleteProductById(@PathVariable("id") prodId: Long) : String {
         return service.deleteProductById(prodId)
     }
 }
